@@ -26,10 +26,8 @@ public class StringTraining {
      * @return if origin string is equal to compare string
      */
     public static boolean equals(String origin, String compare) {
-        if (origin.equals(compare)) {
-            return true;
-        }
-        return false;
+
+        return origin.equals(compare);
     }
 
     /**
@@ -82,8 +80,8 @@ public class StringTraining {
      * @return first character of the string, eg: 't'
      */
     public static char firstChar(String string) {
-        char chara = string.substring(0, 1).charAt(0);
-        return chara;
+
+        return string.charAt(0);
     }
 
     /**
@@ -91,8 +89,7 @@ public class StringTraining {
      * @return last character of the string, eg: 'e'
      */
     public static char lastChar(String string) {
-        char chara = string.substring(string.length() - 1, string.length()).charAt(0);
-        return chara;
+        return string.charAt(string.length() - 1);
     }
 
     /**
@@ -124,7 +121,7 @@ public class StringTraining {
     public static int occurrences(String string, char search) {
         int counter = 0;
         for (int i = 1; i < string.length(); i++) {
-            if (string.substring(i - 1, i).equals(String.valueOf(search))) {
+            if (string.charAt(i) == (search)) {
                 counter += 1;
             }
         }
@@ -138,8 +135,8 @@ public class StringTraining {
      * @return the string where searched characters are replaced, eg: "wesw"
      */
     public static String replaceChar(String string, char search, char replace) {
-        string.replace(search, replace);
-        return string;
+
+        return string.replace(search, replace);
     }
 
     /**
@@ -150,7 +147,7 @@ public class StringTraining {
      */
     public static String replaceString(String string, String search, String replace) {
 
-        return string.replace(search, replace);
+        return string.replaceAll(search, replace);
     }
 
     /**
@@ -161,7 +158,7 @@ public class StringTraining {
      */
     public static String[] split(String string, String delimiter) {
         // https://howtodoinjava.com/java/string/java-string-split-example/
-        String[] array = string.split("|", 2);
+        String[] array = string.split(delimiter);
 
         return array;
     }
